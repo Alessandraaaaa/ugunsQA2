@@ -1,7 +1,8 @@
 package home.page.object;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,7 +17,7 @@ public class BaseFunc {
     private WebDriverWait wait;
     private final Logger LOGGER = LogManager.getLogger(this.getClass());
     public BaseFunc(){
-        System.setProperty("webdriver.chrome.driver", "c://chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\atoro\\Downloads\\chromedriver_win32\\chromedriver.exe");
         // otkritj browser okno driver eto peremennaja dlja browser
 
         driver = new ChromeDriver();
@@ -40,7 +41,6 @@ public class BaseFunc {
     public void click(WebElement element){
         waitUntilClickable(element);
         element.click();
-
     }
 
     public void waitUntilClickable(WebElement element) {
@@ -48,6 +48,7 @@ public class BaseFunc {
     }
 
     public void waitUntilVisible(By element) {
+        wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));
     }
 }

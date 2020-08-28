@@ -26,7 +26,6 @@ public class HomePage {
     }
     public ArticlePage openArticle(int id){
         baseFunc.click(getArticleById(id).findElement(TITLE));
-   //     getArticleById(id).click();
         return new ArticlePage(baseFunc);
     }
 

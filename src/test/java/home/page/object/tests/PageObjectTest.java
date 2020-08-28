@@ -12,7 +12,7 @@ public class PageObjectTest {
     @Test
     public void pageObjectTest() {
         BaseFunc baseFunc = new BaseFunc();
-        baseFunc.openPage("delfi.lv");
+        baseFunc.openPage("http://rus.delfi.lv");
 
         HomePage homePage = new HomePage(baseFunc);
         String homePageTitle  = homePage.getTitleById(1);
@@ -24,7 +24,7 @@ public class PageObjectTest {
         String articleTitle = articlePage.getTitle(article);
         int articleCommentsCount = articlePage.getCommentsCount(article);
 
-        Assertions.assertTrue(homePageTitle.startsWith(articleTitle), "wrong title");
+        Assertions.assertTrue(articleTitle.startsWith(homePageTitle), "wrong title");
         Assertions.assertEquals(homePageCommentsCount, articleCommentsCount, "wrong comment count");
 
         CommentPage commentPage = articlePage.openComment(article);

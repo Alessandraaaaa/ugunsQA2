@@ -41,7 +41,7 @@ public class ArticlePage {
     }
 
     public CommentPage openComment(WebElement article){
-        article.click();
+        baseFunc.click(article.findElement(By.tagName(ARTICLE_PAGE_COMMENT_TAG)));
         return new CommentPage(baseFunc);
     }
 

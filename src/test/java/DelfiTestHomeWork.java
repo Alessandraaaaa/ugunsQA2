@@ -1,5 +1,6 @@
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -26,7 +27,7 @@ public class DelfiTestHomeWork {
     @Test
     public void articleTitleCommentsCheck() {
         LOGGER.info("This test is checking titles and comment count");
-        System.setProperty("webdriver.chrome.driver", "c://chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\atoro\\Downloads\\chromedriver_win32\\chromedriver.exe");
         LOGGER.info("Openning browser");
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();

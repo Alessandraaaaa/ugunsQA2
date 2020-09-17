@@ -25,7 +25,7 @@ public class CommentPage {
     }
 
     public String getTitle(WebElement article){
-        LOGGER.info("Getting this title");
+        LOGGER.info("Getting title");
         return article.getText();
     }
 
@@ -38,6 +38,7 @@ public class CommentPage {
     }
 
     private int parseCommentCount(String textToParse) {
+        LOGGER.info("removing brackets");
         textToParse = textToParse.substring(1, textToParse.length() - 1);
         return Integer.parseInt(textToParse);
     }

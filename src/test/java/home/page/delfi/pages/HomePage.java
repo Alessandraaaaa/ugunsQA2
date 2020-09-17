@@ -25,22 +25,26 @@ public class HomePage {
 
     }
     public String getTitleById(int id){
+        LOGGER.info("get title");
 
         return getArticleById(id).findElement(TITLE).getText();
 
     }
     public ArticlePage openArticle(int id){
+        LOGGER.info("open article");
         baseFunc.click(getArticleById(id).findElement(TITLE));
         return new ArticlePage(baseFunc);
     }
 
     public WebElement getArticleById(int id){
+        LOGGER.info("find article element");
         List<WebElement> articles = baseFunc.findElements(ARTICLE);
         Assertions.assertFalse(articles.isEmpty(), "There is no articles");
         return articles.get(id);
     }
 
     public int getArticleCommentsCount(WebElement article){
+        LOGGER.info("getting number of comments");
         int articlePageCommentCount = 0;
         if (!article.findElements(COMMENTS_COUNT).isEmpty()) {
             articlePageCommentCount = parseCommentCount(article.findElement(COMMENTS_COUNT).getText());

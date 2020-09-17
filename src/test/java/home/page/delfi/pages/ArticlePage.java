@@ -18,7 +18,7 @@ public class ArticlePage {
     public ArticlePage(BaseFunc baseFunc) {
         this.baseFunc = baseFunc;
         baseFunc.waitUntilVisible(ARTICLE_PAGE_TITLE_BY);
-        LOGGER.info("Waiting for article");
+        LOGGER.info("Waiting for article page loading");
 
     }
 
@@ -29,7 +29,7 @@ public class ArticlePage {
     }
 
     public WebElement getArticle() {
-        LOGGER.info("Getting article");
+        LOGGER.info("Getting article element");
 
         return baseFunc.findElements(By.className(ARTICLE_PAGE_TITLE)).get(0);
     }

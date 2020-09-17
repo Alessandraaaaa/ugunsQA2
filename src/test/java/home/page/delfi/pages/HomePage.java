@@ -1,6 +1,8 @@
-package home.page.object.pages;
+package home.page.delfi.pages;
 
-import home.page.object.BaseFunc;
+import home.page.delfi.BaseFunc;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -12,10 +14,13 @@ public class HomePage {
     private final By TITLE = By.xpath(".//h1[contains  (@class, 'headline__title')]");
     private final By COMMENTS_COUNT = By.xpath(".//a[contains(@class, 'comment-count' )]");
     private static final By ARTICLE_PAGE_COMMENT_TAG = By.tagName("a");
+    private final Logger LOGGER = LogManager.getLogger(this.getClass());
 
     private BaseFunc baseFunc;
 
     public HomePage(BaseFunc baseFunc){
+        LOGGER.info("open page");
+
         this.baseFunc = baseFunc;
 
     }

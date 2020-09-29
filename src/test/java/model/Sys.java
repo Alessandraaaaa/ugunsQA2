@@ -6,7 +6,7 @@ public class Sys {
     private Double message;
     private String country;
     private int sunrise;
-    private int sundet;
+    private int sunset;
 
     public int getType() {
         return type;
@@ -48,11 +48,11 @@ public class Sys {
         this.sunrise = sunrise;
     }
 
-    public int getSundet() {
-        return sundet;
+    public int getSunset() {
+        return sunset;
     }
 
-    public void setSundet(int sundet) {
-        this.sundet = sundet;
+    public void setSunset(int sunset) {
+        this.sunset = sunset;
     }
 }

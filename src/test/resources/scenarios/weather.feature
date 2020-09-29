@@ -2,7 +2,7 @@ Feature: testing weather api for one city
 
   Scenario: Testing weather data for London
     Given city is: "London"
-    And coutntry is: "UK"
+    And country is: "UK"
 
     When we are requesting data
 
@@ -11,7 +11,7 @@ Feature: testing weather api for one city
 
     And weather id is: 300
     And main is: "Drizzle"
-    And description is: "Light intensity drizzle"
+    And description is: "light intensity drizzle"
     And icon is: "09d"
 
     And base is: "stations"
@@ -32,7 +32,7 @@ Feature: testing weather api for one city
     And type is: 1
     And sys_id is: 5091
     And message is: 0.0103
-    And country is: "GB"
+    And response country is: "GB"
     And sunrise is: 1485762037
     And sunset is: 1485794875
 
